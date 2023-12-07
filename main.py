@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 from random import *
 
 window = Tk()
@@ -29,7 +30,8 @@ def spinGame():
         userValue = 2
     if selectList.get() == "---Please Select---":
         userValue = 3
-        textLabel.config(text="First, Please select from above\nbefore spinning the game.")
+        imageLabel.config(image=imageList[0])
+        messagebox.showinfo("Rock Paper Scissors Game", "First, Please select from above before spinning the game.")
         
     if userValue == 0 and randomNum == 0:
         textLabel.config(text="It's a Tie :|", foreground="black")
@@ -54,7 +56,6 @@ def spinGame():
         
 def reset():
     textLabel.config(text="", background="white")
-    imageLabel.config(image=imageList[0])
     selectList.current(0)
 
 
